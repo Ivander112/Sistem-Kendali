@@ -22,4 +22,3 @@ disp(s1);
 % Menghitung steady state error
 [y,t]=step(sys);
 sserror=(1-y(end));
-disp()
