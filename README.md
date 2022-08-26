@@ -1,2 +1,3 @@
 # Sistem-Kendali
-Untuk jawaban tugas sistem kendali
+Repositori untuk jawaban tugas sistem kendali
+Penjelasan ada di setiap readme folder
