@@ -1,25 +1,25 @@
-j=1;
-b=2;
-k=3; %proportional
+T = 10;
 s = tf('s');
-num=k/j;
-den=[1 b/j k/j];
-% num = 1;
-% den = [1 4 1];
+num=1;
+den=[T T/16 1];
 sys = tf(num,den);
 
 figure(1)
 step(sys);
-xlim([0 10])
 
 figure(2)
 impulse(sys);
-xlim([0 10])
 
 figure(3)
 step(sys/s); %ramp response
-xlim([0 10]);
+xlim([0 50]);
 title("Ramp response");
 
-% s1 = stepinfo(sys);
-% disp(s1);
+%mendapatkan overshoot, risetime dan settling time
+s1 = stepinfo(sys);
+disp(s1);
+
+% Menghitung steady state error
+[y,t]=step(sys);
+sserror=(1-y(end));
+disp()
