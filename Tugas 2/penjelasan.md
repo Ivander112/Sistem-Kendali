@@ -2,8 +2,7 @@
 
 ### Soal
 
-![image.png](attachment:image.png)
-
+![image](https://user-images.githubusercontent.com/99254988/186876670-3600c86f-e35f-493e-b2b0-3dc6e5ea5014.png)
 
 Variabel "T" merupakan nilai konstanta. Nilai ny boleh diubah. variabel "num" merupakan input dari sistem sementara variabel "den" merupakan input sistem. Kita perlu mendefinisikan "s" sebagai variabel transfer function dengan fungsi tf(num,den). Fungsi tf(num,denum) mengubah input dan output menjadi suatu transfer function.
 
