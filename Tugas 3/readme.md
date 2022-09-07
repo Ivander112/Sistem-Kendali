@@ -19,12 +19,14 @@ code ini saya dapatkan dari [sini](https://viewer.mathworks.com/?viewer=plain_co
   rhTable(2,:) = coeffVector(1,2:2:ceoffLength);
 
 2. Menghitung nilai kolom tabel Routh-Hurwitz
-   a. Jika semua baris pertama bernilai 0 maka lakukan lakukan fungsi if rhTable(i-1,:) == 0 dan seterusnya
-   b. Setelah itu lakukan perhitungan untuk baris pertama. Program merepresentasikan metode perhitungan yang digunakan.
-   c. Menghitung setiap elemen di dalam tabel
+  <ol type="a">
+    <li>Jika semua baris pertama bernilai 0 maka lakukan lakukan fungsi if rhTable(i-1,:) == 0 dan seterusnya.</li>
+    <li>Setelah itu lakukan perhitungan untuk baris pertama. Program merepresentasikan metode perhitungan yang digunakan.</li>
+    <li>Menghitung setiap elemen di dalam tabel.</li>
+  </ol>
 
 3. Menghitung nilai poles yang tidak stabil
-    a. Kita anggap Pole yang tidak stabil bernilai 0
-    b. lakukan pengecekan unutk poles yang tidak stabil
+    a. Kita anggap Pole yang tidak stabil bernilai 0.
+    b. lakukan pengecekan unutk poles yang tidak stabil.
     c. Jika tidak ditemukan poles yang tidak stabil maka cetak "it is a stable system" 
        jika ditemukan poles yang tidak stabil maka cetak "it is an unstable system!"
