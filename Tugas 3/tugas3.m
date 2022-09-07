@@ -1,23 +1,9 @@
 %% Routh-Hurwitz stability criterion
-%
-%  The Routh-Hurwitz stability criterion is a necessary (and frequently
-%  sufficient) method to establish the stability of a single-input,
-%  single-output(SISO), linear time invariant (LTI) control system.
-%  More generally, given a polynomial, some calculations using only the
-%  coefficients of that polynomial can lead us to the conclusion that it
-%  is not stable.
-%  Instructions
-%  ------------
-%
-%  in this program you must give your system coefficients and the
-%  Routh-Hurwitz table would be shown
-%
-%   Farzad Sagharchi ,Iran
-%   2007/11/12
+
 %% Initialization
 clear ; close all; clc
 % Taking coefficients vector and organizing the first two rows
-coeffVector = input('input vector of your system coefficients: \n i.e. [an an-1 an-2 ... K] = ');
+coeffVector = input('masukan koefisien dari sistem: \n i.e. [an an-1 an-2 ... K] = ');
 ceoffLength = length(coeffVector);
 rhTableColumn = round(ceoffLength/2);
 %  Initialize Routh-Hurwitz table with empty zero array
@@ -74,12 +60,12 @@ for i = 1:ceoffLength - 1
         unstablePoles = unstablePoles + 1;
     end
 end
-%   Print calculated data on screen
+%   Mencetak Routh Table
 fprintf('\n Routh-Hurwitz Table:\n')
 rhTable
 %   Print the stability result on screen
 if unstablePoles == 0
-    fprintf('~~~~~> it is a stable system! <~~~~~\n')
+    fprintf('~~~~~> Sistem stabil! <~~~~~\n')
 else
-    fprintf('~~~~~> it is an unstable system! <~~~~~\n')
+    fprintf('~~~~~> Sistem tidak stabil! <~~~~~\n')
 end
