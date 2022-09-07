@@ -26,7 +26,8 @@ code ini saya dapatkan dari [sini](https://viewer.mathworks.com/?viewer=plain_co
   </ol>
 
 3. Menghitung nilai poles yang tidak stabil
-    a. Kita anggap Pole yang tidak stabil bernilai 0.
-    b. lakukan pengecekan unutk poles yang tidak stabil.
-    c. Jika tidak ditemukan poles yang tidak stabil maka cetak "it is a stable system" 
-       jika ditemukan poles yang tidak stabil maka cetak "it is an unstable system!"
+   <ol type="a">
+    <li>Kita anggap Pole yang tidak stabil bernilai 0.</li>
+    <li>lakukan pengecekan unutk poles yang tidak stabil.</li>
+    <li>Jika tidak ditemukan poles yang tidak stabil maka cetak "it is a stable system"  jika ditemukan poles yang tidak stabil maka cetak "it is an unstable system        </li>
+  </ol>
