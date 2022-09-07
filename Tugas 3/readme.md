@@ -1,4 +1,4 @@
-## (**Assignment 3**)
+## **Assignment 3**
 
 Create a program code to determine stability using the Routh stability criteria. The program must be able to :
 1. Returns the value of a polynomial
