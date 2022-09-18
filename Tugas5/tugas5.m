@@ -54,5 +54,5 @@ for x = 1:5
     subplot(3,2,x)
     step(complete(:,:,x)/s);
     title(['Ramp Response Kd: ',num2str(kd(x))])
-    %xlim([290 310]);
+    xlim([0 20]);
 end
