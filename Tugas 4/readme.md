@@ -3,8 +3,8 @@
 ![image](https://user-images.githubusercontent.com/99254988/190119544-f57175c0-315f-4475-b612-c654b44d06e6.png)
 
 Simulate above transfer function using PI (Proportional and Integral) control system. Please use this feedback gain :  
-P : 1
-I : (1, 3, 5, 7, 9)
+P : 1  
+I : (1, 3, 5, 7, 9)  
 
 Simulate by using mentioned input :
 1. Step
