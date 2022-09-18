@@ -26,7 +26,7 @@ And analyze the response based on :
   <ol type="a">
     <li>Deklarasi nilai T unutk sistem. di sitem ini (bebas), saya memakai nilai 16</li>
     <li>Deklarasikan transfer function sesuasi dengan soal. Transfer function plant disimpan di variabel "plant".</li>
-    <li>Deklarasi nilai Kp dan Ki dimana nilai Ki berbeda beda</li>
+    <li>Deklarasi nilai Kp (P) dan Ki (I) dimana nilai Ki berbeda beda</li>
   </ol>
   
 2. Menentukan transfer function sistem (Loop pertama)
