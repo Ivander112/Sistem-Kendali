@@ -99,7 +99,7 @@ for x = 1:3
     figure(5)
     hold on
     step(complete(:,:,x)/(s*s));
-    title('Ramp Response sistem')
+    title('Acceleration Response sistem')
     legend('kendali P', 'kendali PI','kendali PID')
     hold off
 end
