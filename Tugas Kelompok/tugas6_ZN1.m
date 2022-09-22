@@ -32,49 +32,74 @@ title('Mencari tangent line plant ')% Maximum Vertical
 hold off
 grid
 
-%menentukan control PID sistem
-x=0;
-while(x~=1 && x~=2 && x~=3)
-    x = input("1.P\n2.PI\n3.PID\nMasukan sistem control yang ingin dibuat(1-3): ");
+% ================ menentukan control PID sistem ===================
+
+% Deklarasi variable control
+control = tf(zeros(1,1,5));
+sys=tf(zeros(1,1,5));
+complete=tf(zeros(1,1,5));
+
+% sistem dengan P
+kp = T/L;
+control(:,:,1)= tf([0 kp 0],[1 0]);
+
+% sistem dengan PI
+kp = 0.9*T/L;
+Ti= L/0.3;
+ki = kp/Ti;
+control(:,:,2)= tf([0 kp ki],[1 0]);
+
+% sistem dengan PID
+kp = 1.2*T/L;
+Ti= 2*L;
+ki = kp/Ti;
+Td = 0.5*L;
+kd = kp*Td;
+control(:,:,3)= tf([kd kp ki],[1 0]);
+
+
+%menentukan transfer function sistem
+for x = 1:3
+    sys(:,:,x) = motor*control(:,:,x);
+    complete(:,:,x) = feedback(sys(:,:,x),1);
 end
-if x == 1
-    kp = T/L;
-    control= tf([0 kp 0],[1 0]);
-elseif x == 2
-    kp = 0.9*T/L;
-    Ti= L/0.3;
-    ki = kp/Ti;
-    control= tf([0 kp ki],[1 0]);
-else
-    kp = 1.2*T/L;
-    Ti= 2*L;
-    ki = kp/Ti;
-    Td = 0.5*L;
-    kd = kp*Td;
-    control= tf([kd kp ki],[1 0]);
+
+
+for x = 1:3
+    %Step response
+    figure(2)
+    hold on
+    step(complete(:,:,x));
+    title('Step Response sistem')
+    legend('kendali P', 'kendali PI','kendali PID')
+    hold off
+
+    % Mencari karakteristik gelombang 
+    tf_info(x)= stepinfo(complete(:,:,x));
+    % mencari steady state error
+    [y,t]=step(complete(:,:,x));
+    sserror(x)=(1-y(end));
+    
+    % Impulse Repsonse    
+    figure(3)
+    hold on
+    impulse(complete(:,:,x));
+    title('Impulse Response sistem')
+    legend('kendali P', 'kendali PI','kendali PID')
+    hold off
+    
+    % Ramp Repsonse 
+    figure(4)
+    hold on
+    step(complete(:,:,x)/s);
+    title('Ramp Response sistem')
+    legend('kendali P', 'kendali PI','kendali PID')
+    hold off
+    
+    figure(5)
+    hold on
+    step(complete(:,:,x)/(s*s));
+    title('Ramp Response sistem')
+    legend('kendali P', 'kendali PI','kendali PID')
+    hold off
 end
-
-sys = motor*control;
-complete= feedback(sys,1);
-
-%Step response dan impulse response
-figure(2)
-hold on
-step(complete);
-impulse(complete);
-title('Step Response dan Impulse Reponse Sistem ')
-legend('Step', 'Impulse')
-hold off
-% Mencari karakteristik gelombang 
-tf_info= stepinfo(complete);
-
-% mencari steady state error
-[y,t]=step(complete);
-sserror=(1-y(end));
-
-% Ramp Repsonse 
-figure(3)
-step(complete/s);
-title('Ramp Response Sistem ')
-% xlim([0 10]);
-
