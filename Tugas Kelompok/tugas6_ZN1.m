@@ -12,6 +12,8 @@ den_motor = [J*L J*R+b*L R*b+K*K];
 motor = tf(num_motor,den_motor);
 
 % =========== mencari tangenline dan menetukan nilai T dan Y ================
+tic
+timeVal=tic;
 [y,t] = step(motor);
 h = mean(diff(t));
 dy = gradient(y, h);                                            % Numerical Derivative
@@ -57,6 +59,7 @@ Td = 0.5*L;
 kd = kp*Td;
 control(:,:,3)= tf([kd kp ki],[1 0]);
 
+toc
 
 %menentukan transfer function sistem
 for x = 1:3
