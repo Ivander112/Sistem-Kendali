@@ -1,4 +1,7 @@
-clc; clearvars; close all;
+clc 
+clear all
+close all
+
 % Get the tangent line
 J = 0.01;
 b = 0.1;
