@@ -45,21 +45,21 @@ sys=tf(zeros(1,1,5));
 complete=tf(zeros(1,1,5));
 
 % sistem dengan P
-kp = T/L;
+kp = T/L
 control(:,:,1)= tf([0 kp 0],[1 0]);
 
 % sistem dengan PI
-kp = 0.9*T/L;
+kp = 0.9*T/L
 Ti= L/0.3;
-ki = kp/Ti;
+ki = kp/Ti
 control(:,:,2)= tf([0 kp ki],[1 0]);
 
 % sistem dengan PID
-kp = 1.2*T/L;
+kp = 1.2*T/L
 Ti= 2*L;
-ki = kp/Ti;
+ki = kp/Ti
 Td = 0.5*L;
-kd = kp*Td;
+kd = kp*Td
 control(:,:,3)= tf([kd kp ki],[1 0]);
 
 toc
